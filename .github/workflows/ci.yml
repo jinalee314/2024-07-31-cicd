@@ -24,6 +24,8 @@ jobs:
               uses: actions/setup-python@v5
               with:
                 python-version: ${{ matrix.python-version }}
+            - if: runner.os == 'Linux'
+              run: echo This is Linux
             - run: python -m pip install .[test]
             - name: Run tests
               run: python -m pytest
