@@ -26,6 +26,7 @@ jobs:
                 python-version: ${{ matrix.python-version }}
             - if: runner.os == 'Linux'
               run: echo This is Linux
+            - run: echo This is ${{ runner.os }}
             - run: python -m pip install .[test]
             - name: Run tests
               run: python -m pytest
